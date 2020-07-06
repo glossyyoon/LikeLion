@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ="static/style.css">
+    <link rel="stylesheet" href ="{% static 'style.css' %}">
     <title>gallery Add</title>
     <style>
         body{
@@ -16,13 +17,13 @@
     </style>
 </head>
 <body>
-    <div class="boxA">
+    <div class="titleBox">
         <form action="{% url 'create' %}" enctype="multipart/form-data" method="POST">
             {% csrf_token %}
                 <p>사진을 넣어주세요!</p>
                 {{form.pic}}
                 <p>사진 이름: </p>
-                <input type = "text" name = "pictext">
+                <input type = "text" name = "title">
                 <p>설명: </p>
                 <input type = "text" name = "explain">
                 <input type = "submit" value="추가하기">

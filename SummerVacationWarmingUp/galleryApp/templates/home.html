@@ -1,28 +1,84 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-    <head> <meta charset="UTF-8"> 
+<html lang="ko">
+    <head> 
+        <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-        <link rel="stylesheet" href ="static/style.css">
+        <link rel="stylesheet" href ="{% static 'style.css' %}">
         <title>Gallery</title> 
+        <style>
+            a.tip {
+               border-bottom: 1px dashed;
+               text-decoration: none
+           }
+           a.tip:hover {
+               cursor: help;
+               position: relative
+           }
+           a.tip span {
+               display: none
+           }
+           a.tip:hover span {
+               border: #c0c0c0 1px dotted;
+               padding: 5px 20px 5px 5px;
+               display: block;
+               z-index: 100;
+               background: url(../images/status-info.png) #f0f0f0 no-repeat 100% 5%;
+               left: 0px;
+               margin: 10px;
+               width: 250px;
+               position: absolute;
+               top: 10px;
+               text-decoration: none
+           }
+            </style>
     </head>
+    <script>
+        var index = 0;
+        window.onload = function(){
+            slideShow();
+        }
+        function slideShow(){
+            var i;
+            var x = document.getElementsByClassName("slide1");
+            for (i=0; i<x.length; i++){
+                x[i].style.display = "none";
+            }
+            index++;
+            if(index>x.length){
+                index = 1;
+            }
+            x[index-1].style.display = "block";
+            setTimeout(slideShow, 1000);
+        }
+    </script>
+    
 <body>
-    <div class="whole">
-        <div class = "boxA">
+    
+    <div class="bottom">
+        <div class = "titleBox">
             <center><h1>Jiyoon's Gallery!</h1></center>
         </div>
         
         {% for i in home_key.all %}
         {% if i.pic %}
-        <div class = "boxB">
-            <a href="{% url 'detail' i.id %}"><img src ="{{i.pic.url}}" style="width: 300px;"><br></a>
-        </div>
+        <center><img class="slide1" src = "{{i.pic.url}}" style = "width: 40%; height: 400px;"></center><br>
         {% endif %}
-        {% endfor %}   
-
+        {% endfor %}
+        
+        <div class = "tip" >
+            {% for i in home_key.all %}
+            {% if i.pic %}
+            <a href="{% url 'detail' i.id %}" title="이름: {{i.title}}  설명: {{i.explain}}" style="background-color:#FFFFFF;color:#000000;text-decoration:none"><img src = "{{i.pic.url}}" style="width: 300px;"></a>
+            {% endif %}
+            {% endfor %}
+        </div>
+          
         <div class = "bottom">
             <a href="{% url 'createPage' %}">생성하기</a>
         </div>
+        
     </div>
 </body>
+    
 </html>
