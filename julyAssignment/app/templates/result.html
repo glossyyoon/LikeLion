@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'styles.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <div class="search">
+        <p>"{{query}}"에 대한 "{{selected}}" 결과는 다음과 같습니다</p>
+        <p>총 "{{count}}" 개의 게시물이 검색되었습니다.</p>
+    <br>
+    </div>
+    
+    <div class="post">
+        {% for post in BlogPosts %}
+        <p>제목: {{post.title}}</p>
+        <p>내용: {{post.text}}</p>
+        <p>글쓴이: {{post.author}}</p>
+        <p>--------------------------------------------------------------------------------</p>
+    {% endfor %}
+    </div>
+</body>
+</html>

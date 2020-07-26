@@ -1,0 +1,52 @@
+@font-face{
+    font-family: Namsan;
+    src: url(GmarketSansTTFMedium\ 복사본.ttf);
+}
+
+.top{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.left{
+    width: 30%;
+    font-family: Namsan;
+    font-style: italic;
+    color: deepskyblue;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+}
+.right{
+    font-family: Namsan;
+    width: 30%;
+    align-items: center;
+}
+.input_box{
+    width: 450px;
+    height: 30px;
+}
+.bottom{
+    font-family: Namsan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post{
+    font-family: Namsan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search{
+    font-family: Namsan;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}

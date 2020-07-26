@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'styles.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "top">
+        <div class = "left">
+            <center><h1>Search Engine</h1></center>
+        </div>
+        <div class = "center">
+            <center><a href="{% url 'search' %}" >검색창</a></center>
+        </div>
+        <div class = "right">
+            <center><p>박지윤님 안녕하세요!</p></center>
+        </div>
+    </div>
+    <div class = "bottom">
+        {% for i in blog_list %}
+        <a href="{% url 'detail' i.id %}" style="text-decoration: none;">
+            <h1>글 제목: {{i.title}}</h1>
+            <p>내용: {{i.text}}</p>
+            <p>글쓴이: {{i.author}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;작성 시간: {{i.time}}</p>
+            
+        </a>
+        {% endfor %}
+        
+    </div>
+    <a href="{% url 'create' %}" >새글쓰기</a>
+</body>
+</html>
