@@ -1,0 +1,280 @@
+{% load static %}
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💕Give me your name💕</title>
+  <link rel="stylesheet" href="static/proj_jiyoon.css">
+
+</head>
+<body style="color: black; background-color: white;" >
+  <div id="myModal" class="modal">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="mordalp">
+        <h2>💕😆환영합니다😆💕<br>
+        지금 로그인 하시면 100포인트 지급!</h2></p>
+    </div>
+  </div>
+  
+  <div id="container" style="overflow: auto;" scrolling no>
+    <div id="top">
+      <div id="siteName">Naming Auction</div>
+      <div id="clock" style="color:black;"></div>
+    </div>
+
+    <div id="navBar" style type="text/class">
+        <ul>
+          <li class="nav"><p>clothes</p></li>
+          <li class="nav"><p>pet</p></li>
+          <li class="nav"><p>food</p></li>
+          <li class="nav"><p>group‍</p></li>
+          <li class="nav"><p>etc</p></li>
+        </ul>
+    </div>
+    <style type="text/css; align = center">
+
+        *        { margin:0; padding: 0; }
+        object
+        /* #login{
+          text-align: right;
+        } */
+      
+        #login-form{
+          width:200px;
+          margin:100px auto;
+          margin-bottom: 10px;
+          border: 1px solid gray;
+          border-radius: 5px;
+          padding: 15px;
+        }
+        
+        /* inline이였던 요소들을 block으로 바꿈 */
+        #login-form input, #login-form label{
+          display:block;
+        }
+        
+        #login-form label{
+          margin-top: 10px;
+        }
+        
+        #login-form input{
+          margin-top: 5px;
+        }
+        
+        /* 애트리뷰트 선택자 */
+        #login-form input[type='image']{
+          margin: 10px auto;
+        }
+
+    </style>
+    <body>
+      <form id="login-form" method="post">
+        <div id = "login" text-align = right>
+              <label class="legend">ID</label>
+              <input name="userid" type="text">
+
+              <label class="legend">PW</label> 
+              <input name="passwprd" type="password"> 
+
+              <input type="image" src="static/login.png" value="로그인" height="20px" width="60px">
+        </div>
+      </form>
+    </body>
+    </div>
+
+    </div>
+    <div id="list">
+      <div id = "page">
+        <div id="box">
+          <div id="photo">
+            <img src="static/음식1.png" alt="" >
+          </div>
+          <div id="content">
+            <div id="title">
+              <h2><t>저희 집 파스타 신메뉴입니다</t></h2>
+            </div>
+            <div id="text">
+              <p>새우와 마늘을 넣은 퓨전메뉴에요 <br> 식사권을 사은품으로 드립니다! </p>
+            </div>
+          </div>
+          <div id="rank">
+            <h3 id="rankTitle">Ranking</h3>
+            <ol>
+              <li>새마퓨</li>
+              <li>존맛파스타</li>
+              <li>뉴파스타</li>
+            </ol>
+          </div>
+        </div>
+        <div id="box">
+          <div id="image">
+            <img src="static/음식4.png" alt="">
+          </div>
+          <div id="content">
+            <div id="title">
+              <h2>피자 이름을 지어주세요!!</h2>
+            </div>
+            <div id="text">
+              <p>진짜 너무 맛있는 피자에요~ 저희 집에서 개발했어용<br>고구마 무스가 들어갔어요 너무 배고프네요,,</p>
+            </div>
+          </div>
+          <div id="rank">
+            <h3 id="rankTitle">Ranking</h3>
+            <ol>
+              <li>고구미</li>
+              <li>배고파요</li>
+              <li>노랑피자</li>
+            </ol>
+          </div>
+        </div>
+        <div id="box">
+          <div id="image">
+            <img src="static/음식3.png" alt="">
+          </div>
+          <div id="content">
+            <div id="title">
+              <h2>맛있는 돼지껍데기에용~</h2>
+            </div>
+            <div id="text">
+              <p>냄새가 안나서 남녀노소 모두 즐길 수 있어요<br>1등하시는 분께는 10팩을 드립니다!!</p>
+            </div>
+          </div>
+          <div id="rank">
+            <h3 id="rankTitle">Ranking</h3>
+            <ol>
+              <li>꿀껍데기</li>
+              <li>쫀디기</li>
+              <li>맛있어용</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div id = "page">
+        <div id="box">
+          <div id="image">
+            <img src="static/음식2.png" alt="" align = "center">
+          </div>
+          <div id="content">
+            <div id="title">
+              <h2>마카롱 이름을 지어주세요 ㅎㅎ</h2>
+            </div>
+            <div id="text">
+              <p>귀여운 🐔모양 마카롱입니당 <br>아이들이 좋아하는 바닐라 맛이에요~!!</p>
+            </div>
+          </div>
+          <div id="rank">
+            <h3 id="rankTitle">Ranking</h3>
+            <ol>
+              <li>꼬끼오</li>
+              <li>닭카롱</li>
+              <li>뚱카롱</li>
+            </ol>
+          </div>
+        </div>
+        <div id="box">
+          <div id="image">
+            <img src="static/음식5.png" alt="">
+          </div>
+          <div id="content">
+            <div id="title">
+              <h2>새로나온 과자 입니다.</h2>
+            </div>
+            <div id="text">
+              <p>달콤한 강냉이 맛이 나는 과자입니다.
+                <br>
+                가장 센스 있는 이름을 지어주시는 분께 상금 천만원을~!
+            </div>
+          </div>
+          <div id="rank">
+            <h3 id="rankTitle">Ranking</h3>
+            <ol>
+              <li>달강냉이</li>
+              <li>존맛탱구리</li>
+              <li>과자</li>
+            </ol>
+          </div>
+        </div>
+      <div id="box">
+        <div id="image">
+          <img src="static/음식8.png" alt="">
+        </div>
+        <div id="content">
+          <div id="title">
+            <h2>맛있는 후라이드 치킨~~~~</h2>
+          </div>
+          <div id="text">
+            <p>증말루 맛있습니당 맛없으면 환불~!~!!
+              <br>
+              역대급 바삭바삭함,,배고파요,,,
+            </p>
+          </div>
+        </div>
+        <div id="rank">
+          <h3 id="rankTitle">Ranking</h3>
+          <ol>
+            <li>뱃속에그지</li>
+            <li>1인1닭</li>
+            <li>쌉가능</li>
+          </ol>
+        </div>
+      </div>
+      </div>
+      <div id = "page">
+      
+
+  </div>
+</body>
+<script>
+  let modal = document.getElementById("myModal");
+  let span = document.getElementsByClassName("close")[0];
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  var clockTarget = document.getElementById("clock");
+
+  function clock() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    clockTarget .innerText = `${hours < 10 ? `0${hours}` : hours}시 ${minutes < 10 ? `0${minutes }`  : minutes }분 ${seconds < 10 ? `0${seconds }`  : seconds }초`;
+  }
+
+  function init() {
+    clock();
+    setInterval(clock, 1000);
+  }
+
+  init();
+  window.scrollTo(0,0)  
+  let lastScrollTop = 0;
+  document.addEventListener("scroll", () => {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop){
+      window.scrollBy(0, 2);
+    } else {
+      window.scrollBy(0, -2);
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+    }, false);
+
+  let nav = document.getElementsByClassName('nav')
+  
+  for (let i=0; i<nav.length; i++) {
+    if (i == 2) {
+      nav[i].addEventListener('click', () => {
+        alert('현재  페이지 입니다')
+      });
+    } else {
+      nav[i].addEventListener('click', () => {
+        alert('준비중인 페이지 입니다')
+    })
+    }
+  };
+  </script>
+</html>

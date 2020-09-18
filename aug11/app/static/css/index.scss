@@ -1,0 +1,18 @@
+@charset 'utf-8';
+@import "_mixins.scss";
+
+h1{
+    color: red;
+    @include responsive("iphone"){
+        color: pink;
+    }
+    @include responsive("ipad"){
+        color: purple;
+    }
+    @include responsive("iphone-1"){
+        color: royalblue;
+    }
+    @include responsive("ipad-1"){
+        color: salmon;
+    }
+}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자소설 닷컴</title>
+    <link rel = "stylesheet" type="text/css" href={% static 'index.css' %}
+</head>
+<body>
+    <a href = "{% url 'signup' %}">
+        <button>회원가입</button>
+    </a>
+    <div class="make_jss">
+        <a href="{% url 'create' %}"><br><br>
+        <div class="plus_btn">
+            +
+        </div><br><br>
+        </a>
+        <p>자기소개서 작성</p>
+    </div>
+    {% for jss in all_jss %}
+    <a href = "{% url 'detail' jss.id %}">
+    <div class="all_jss">
+        <p>{{jss.title}}</p>
+
+        <p>{{jss.content}}</p>
+
+        <p>{{jss.updated_at|date:"Y-m-d"}}</p>
+    </div>
+    </a>
+    {% endfor %}
+</body>
+
+</html>

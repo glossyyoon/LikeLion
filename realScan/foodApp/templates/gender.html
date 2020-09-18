@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'style.css' %}?after">
+    <title>Document</title>
+</head>
+<style>
+    body{
+      margin: 0px;
+      text-align: center;
+      align-items: center;
+      background-color: white;
+    }
+    .top{
+      height: 130px;
+      width: 100%;
+      padding-top: 40px;
+      text-align: center;
+      background-color: #295C71;
+    }
+    .name{
+      color : white;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .name2{
+        color : white;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .btn_1{
+      background-color: #92C1D4;
+      color: white;
+      border: 0px solid white;
+      font-size: 15px;
+      
+      border-radius: 50px;
+      margin: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      }
+    .btn_1:hover{
+      background-color:#b6c4c9;
+      color: white;
+    }
+  </style>
+<body>
+    <div class="top"><h2 class="name">내코드</h2></div>
+    <br>
+    <div></div>
+    <br>
+    <br>
+    <div class="select">
+        <h1>성별을 선택해주세요!</h1>
+        <div class="gender">
+            <a href="main.html"><img src = "static/여자.png" style="width: 120px;"></a>
+            <a href="main_man.html"><img src = "static/남자.png" style="width: 120px;"></a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

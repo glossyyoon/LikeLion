@@ -1,0 +1,6 @@
+@media(max-width:720px){
+    .box{
+        height: auto;
+        width: 640px;
+    }
+}

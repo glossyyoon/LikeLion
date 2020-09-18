@@ -43,10 +43,3 @@ class create(CreateView):
         return HttpResponseRedirect(self.request.POST.get('index'))
     def get_absolute_url(self):
         return u'/some_url/%d' % self.id 
-
-# def result(request):
-#     BlogPosts = Blog.objects.all()
-#     query = request.GET.get('query', '')
-
-#     if query:
-#         BlogPosts = BlogPosts.file

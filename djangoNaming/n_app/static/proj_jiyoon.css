@@ -1,0 +1,201 @@
+@font-face{ 
+    font-family:Nanum;
+    src: url(NanumGothic-Regular.ttf);
+}
+@font-face{
+  font-family: Noto-Light;
+  src: url(NotoSerifKR-ExtraLight.otf);
+}
+@font-face{
+  font-family: BlackHan;
+  src: url(BlackHanSans-Regular.ttf);
+}
+@font-face{
+  font-family: Namsan;
+  src: url(GmarketSansTTFLight.ttf);
+}
+@font-face{
+  font-family: Namsan-bold;
+  src: url(GmarketSansTTFMedium.ttf);
+}
+
+.page{
+  width:100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+#top {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+#siteName {
+  flex: 8;
+  color: rgb(252, 220, 78);
+  font-weight: bolder;
+  font-size: 45px;
+  padding-left: 30px;
+  text-align: center;
+  font-family: BlackHan;
+  text-shadow: 2px 2px 2px black;
+}
+
+#clock {
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 25px;
+  font-family: Noto-Light;
+}
+
+ul {
+  background-color: rgb(252, 220, 78);
+  display: flex;
+  flex-direction: row;
+  list-style:none;
+  height: 40px;
+  margin-bottom: 4px;
+}
+
+#navBar {
+  margin-top: 3px;
+  text-decoration: none;
+}
+
+.nav  {
+  flex: 1;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-family: Noto-Light;
+
+}
+li:hover {
+  background-color: rgb(252, 220, 78);
+  transition: background-color .5s;
+  color:  black;
+}
+#login{
+  font-family: Nanum;
+  font-size: 0.75em;
+  color: #333;
+}
+
+#clockContent {
+  vertical-align: bottom
+}
+#box {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid ;
+  width: 70%;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  height: 75px;
+  padding: 1rem;
+  color: white;
+  background: teal;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#content {
+  flex: 6;
+  font-family: Nanum;
+}
+#rank {
+  flex:2;
+
+}
+ol li {
+  font-size: 16px;
+  color: b;
+  padding: 10px
+}
+#rankTitle {
+  margin-left: 40px;
+  color: id rgb(250, 191, 245);
+}
+
+
+#text {
+  font-weight: bold;
+  font-family: Namsan;
+  padding-left: 30px;
+}
+#title {
+  font-weight: bold;
+  font-family: Namsan-bold;
+  padding-left: 30px;
+}
+
+img {
+  width: 180px;
+  height: auto;
+  border-radius: 5%;
+  margin-top: 10px;
+  margin-left: 10px;
+  
+}
+.photo {
+  flex: 1.5;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  margin:0px auto;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: white;
+  margin: 150px;
+  padding: 20px;
+  border: 10px solid pink;
+  width: 70%;
+  height: 200px;
+  text-align: center;
+  font-family: Namsan;
+  color: rgb(8, 31, 85);
+  font-weight: bold;
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

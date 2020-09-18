@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'new' %}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <p>유튜브 이름</p>
+        <input type="text" name = "name">
+        <p>구독자 수</p>
+        <input type='integer' name = 'sub'>
+        <p>추천 영상</p>
+        <textarea cols=30 rows=1 name='youtube_link1'></textarea>
+        <p>라이브 여부</p>
+        <p>예</p><input type="radio" name="choices" value="true">
+        <p class="pictures">사진</p>
+        {{forms.photo}}
+        <input type="submit" value="글쓰기">
+    </form>
+</body>
+</html>

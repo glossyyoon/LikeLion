@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'style.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <center><img src="../static/쿠키.png" style="width: 250px; height: 250px;"></center>
+    <div class="infobox">
+        <center>
+            <h2>상품명: {{detail_key.name}}</h2><br>
+            <h3>탄수화물 : {{detail_key.carbonhydrate}}mg WHO권장 여성 한끼 섭취량: 500mg</h3>
+            <h3>나트륨 : {{detail_key.sodium}}mg WHO권장 여성 한끼 섭취량: 300mg</h3>
+            <h3>지방 : {{detail_key.fat}}mg WHO권장 여성 한끼 섭취량: 400mg</h3>
+            <h3>콜레스테롤 : {{detail_key.cholesterol}}kcal WHO권장 여성 한끼 칼로리: 8000kcal</h3>
+            <h3>단백질 : {{detail_key.protein}}mg WHO권장 여성 한끼 섭취량: 0mg</h3>
+            <h3>칼로리 : {{detail_key.calorie}}mg WHO권장 여성 한끼 섭취량: 500mg</h3>
+        </center>
+        
+</body>
+</html>
+

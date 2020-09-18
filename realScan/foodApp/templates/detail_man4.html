@@ -1,0 +1,61 @@
+{% load static %}
+{% load mathfilters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'style.css' %}?after">
+    <title>Document</title>
+</head>
+<style>
+    body{
+      margin: 0px;
+      text-align: center;
+      align-items: center;
+      background-color: white;
+    }
+    .top{
+      height: 130px;
+      width: 100%;
+      padding-top: 40px;
+      text-align: center;
+      background-color: #295C71;
+    }
+    .name{
+      color : white;
+      font-size: 30px;
+      font-weight: 600;
+    }
+</style>
+<body>
+    <div class="top"><h2 class="name">{{detail_key.product_name}}</h2></div>
+    <br>
+    {% if detail_key.foodtype == '즉석식품류'%}
+    <center><img src="../static/즉석식품.png" style="width: 250px; height: 250px;"></center>
+    {% elif detail_key.foodtype == '면류'%}
+    <center><img src="../static/면류.png" style="width: 250px; height: 250px;"></center>
+    {% elif detail_key.foodtype == '조미식품'%}
+    <center><img src="../static/조미식품.png" style="width: 250px; height: 250px;"></center>
+    {% elif detail_key.foodtype == '잼류'%}
+    <center><img src="../static/jam.png" style="width: 250px; height: 250px;"></center>
+    {% elif detail_key.foodtype == '식육가공품 및 포장육'%}
+    <center><img src="../static/국밥.png" style="width: 250px; height: 250px;"></center>
+    {% elif detail_key.foodtype == '과자류, 빵류 또는 떡류'%}
+    <center><img src="../static/과자류.png" style="width: 250px; height: 250px;"></center>
+    {% else%}
+    <center><img src="../static/milk-products.png" style="width: 250px; height: 250px;"></center>
+    {% endif %}
+    <div class="infobox">
+        <center>
+
+            <h3>콜레스테롤 : {{detail_key.cholesterol}}mg 권장 남성 한끼 섭취량: 100mg</h3>
+            {% if detail_key.cholesterol < 100 %}
+            <h3>{{100|sub:detail_key.cholesterol}}mg 정도 적정합니다!! <br> 다음 식사를 하실때, 참고해주세요 </h3>
+            {% elif detail_key.cholesterol > 100 %}
+            <h3>{{detail_key.cholesterol|sub:100}}mg 이 초과되었습니다!! <br> 다음 식사를 하실때, 참고해주세요 </h3>
+            {% endif %}
+        </center>
+</body>
+</html>
+

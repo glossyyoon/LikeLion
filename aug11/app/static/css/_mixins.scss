@@ -1,0 +1,40 @@
+@mixin responsive($device){
+    @if $device=="iphone"{
+        @media only screen 
+        and (min-device-width: 320px) 
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait) {
+            @content;
+      }
+    }
+    @else if $device=="ipad"{
+        @media only screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1024px) 
+        and (orientation: portrait) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+            @content;
+        }
+        
+    }
+    @else if $device=="iphone-1"{
+        @media only screen 
+        and (min-device-width: 320px) 
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape) {
+            @content;
+        }
+        
+    }
+    @else if $device=="iphone-1"{
+        @media only screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1024px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+            @content;
+        }
+    }
+}

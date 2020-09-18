@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'style.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <center><img src="static/쿠키.png" style="width: 250px; height: 250px;"></center>
+    <div class="infobox">
+        {% for post in Ingredients1 %}
+        <h2>상품명: {{post.name}}</h2>
+        <div class="one" style="position: relative;">
+            {% if post.carbonhydrate >= 425.4 %}
+            <a href="detail_man.html"><img src = "static/탄수화물파.png" style="width: 120px;"></a>
+            {% elif post.carbonhydrate < 425.4 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/탄수화물노.png" style="width: 120px;"></a>
+            {% endif %}
+
+            {% if post.sodium >= 666.6 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/나트륨빨.png" style="width: 120px;"></a>
+            {% elif post.sodium < 666.6 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/나트륨파.png" style="width: 120px;"></a>
+            {% endif %}
+        </div>
+            
+            
+        <div class="one">
+            {% if post.fat > 5.9 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/지방빨.png" style="width: 120px;"></a>
+            {% elif 4.72 <= post.fat <= 5.9 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/지방파.png" style="width: 120px;"></a>
+            {% elif post.fat < 4.72 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/지방노.png" style="width: 120px;"></a>
+            {% endif %}
+
+            {% if post.cholesterol > 0 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/콜레스테롤빨.png" style="width: 120px;"></a>
+            {% elif post.cholesterol == 0 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/콜레스테롤파.png" style="width: 120px;"></a>
+            {% endif %}
+        </div>
+            
+        <div class="one">
+            {% if post.protein > 28.36 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/단백질빨.png" style="width: 120px;"></a>
+            {% elif 18.9 <= post.protein <= 28.36 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/단백질파.png" style="width: 120px;"></a>
+            {% elif post.protein < 18.9 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/단백질노.png" style="width: 120px;"></a>
+                
+            {% endif %}
+
+            {% if post.calorie > 809 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/칼로리빨.png" style="width: 120px;"></a>
+            {% elif 709 <= post.calorie <= 809 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/칼로리파.png" style="width: 120px;"></a>
+            {% elif post.calorie < 709 %}
+            <a href="{% url 'detail_man' post.id %}"><img src = "static/칼로리노.png" style="width: 120px;"></a>
+            {% endif %}
+        </div>
+            
+
+        {% endfor %}
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+      margin: 0px;
+      text-align: center;
+      align-items: center;
+      background-color: white;
+    }
+    .top{
+      height: 130px;
+      width: 100%;
+      padding-top: 40px;
+      text-align: center;
+      background-color: #295C71;
+    }
+    .name{
+      color : white;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .btn_1{
+      background-color: #92C1D4;
+      color: white;
+      border: 0px solid white;
+      font-size: 15px;
+      
+      border-radius: 50px;
+      margin: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      }
+    .btn_1:hover{
+      background-color:#b6c4c9;
+      color: white;
+    }
+  </style>
+<body>
+    <div class="top"><h2 class="name">내코드</h2></div>
+    <br>
+    <div></div>
+  
+    <br>
+    <h4>사용자님의 제품의 바코드를 인식해주세요 👀<br>
+    사용자님이 사용하기에 적절한 지 알려드릴게요 🤗</h4>
+    <br>
+    <div class="container">
+        <div class="container_content">
+            <form action="{% url 'main_man' %}" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                <input type="text" name="barcode_num" placeholder="바코드번호 입력" required>
+                <div class="button">
+                    <input type="submit" value="입력">
+                </div>
+            </form>
+        </div>
+    </div> 
+    <br>
+    <div><button class = "btn_1" >스캐너실행</button></div>
+    <br>
+  
+    <video autoplay>비디오</video>  
+</body>
+<script>
+    // 자바스크립트가 올바르게 작동하는 지 확인하기 위함
+    console.log("자바스크립트 실행 중")
+      
+    function update(stream) {
+          document.querySelector('video').src = stream.url;}
+      
+    //버튼을 누르면 사용자의 미디어 video에 접근
+    document.querySelector('button').addEventListener('click', async(e) => {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video :true
+        })
+        document.querySelector('video').srcObject = stream
+        })
+      
+    // //Quagga 실행
+    // Quagga.init({
+    //     inputStream : {
+    //       name : "Live",
+    //       type : "LiveStream",
+    //       target: document.querySelector('video') //html 내 video
+    //     },
+    //     decoder : {
+    //       readers : ["code_128_reader"]
+    //     }
+    //   }, function(err) {
+    //       if (err) {
+    //           console.log(err);
+    //           return
+    //       }
+    //       console.log("Initialization finished. Ready to start");
+    //       Quagga.start();
+    //   });
+    </script>
+</html>

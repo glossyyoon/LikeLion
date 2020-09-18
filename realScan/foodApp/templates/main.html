@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'style.css' %}?after">
+    <title>Document</title>
+</head>
+<style>
+    body{
+      margin: 0px;
+      text-align: center;
+      align-items: center;
+      background-color: white;
+    }
+    .top{
+      height: 130px;
+      width: 100%;
+      padding-top: 40px;
+      text-align: center;
+      background-color: #295C71;
+    }
+    .name{
+      color : white;
+      font-size: 30px;
+      font-weight: 600;
+    }
+</style>
+<body>
+    <div class="top"><h2 class="name"> {{post.product_name}}</h2></div>
+    {% if post.foodtype == '즉석식품류'%}
+    <center><img src="static/즉석식품.png" style="width: 250px; height: 250px;"></center>
+    {% elif post.foodtype == '면류'%}
+    <center><img src="static/면류.png" style="width: 250px; height: 250px;"></center>
+    {% elif post.foodtype == '조미식품'%}
+    <center><img src="static/조미식품.png" style="width: 250px; height: 250px;"></center>
+    {% elif post.foodtype == '잼류'%}
+    <center><img src="static/jam.png" style="width: 250px; height: 250px;"></center>
+    {% elif post.foodtype == '식육가공품 및 포장육'%}
+    <center><img src="static/국밥.png" style="width: 250px; height: 250px;"></center>
+    {% elif post.foodtype == '과자류, 빵류 또는 떡류'%}
+    <center><img src="static/과자류.png" style="width: 250px; height: 250px;"></center>
+    {% else%}
+    <center><img src="static/milk-products.png" style="width: 250px; height: 250px;"></center>
+    {% endif %}
+    <div class="infobox">
+        <div class="one" style="position: relative;">
+            {% if post.carbohydrate >= 342 %}
+            <a href="{% url 'detail1' post.id %}"><img src = "static/탄수화물파.png" style="width: 120px;"></a>
+            {% elif post.carbohydrate < 342 %}
+            <a href="{% url 'detail1' post.id %}"><img src = "static/노탄.png" style="width: 120px;"></a>
+            {% endif %}
+
+            {% if post.sodium >= 666.6 %}
+            <a href="{% url 'detail2' post.id %}"><img src = "static/나트륨빨.png" style="width: 120px;"></a>
+            {% elif post.sodium < 666.6 %}
+            <a href="{% url 'detail2' post.id %}"><img src = "static/나트륨파.png" style="width: 120px;"></a>
+            {% endif %}
+        </div>
+            
+            
+        <div class="one">
+            {% if post.fat > 4.75 %}
+            <a href="{% url 'detail3' post.id %}"><img src = "static/지방빨.png" style="width: 120px;"></a>
+            {% elif 3.8 <= post.fat and post.fat <= 4.75 %}
+            <a href="{% url 'detail3' post.id %}"><img src = "static/지방파.png" style="width: 120px;"></a>
+            {% elif post.fat < 3.8 %}
+            <a href="{% url 'detail3' post.id %}"><img src = "static/노지.png" style="width: 120px;"></a>
+            {% endif %}
+
+            {% if post.cholesterol > 0 %}
+            <a href="{% url 'detail4' post.id %}"><img src = "static/콜레스테롤빨.png" style="width: 120px;"></a>
+            {% elif post.cholesterol == 0 %}
+            <a href="{% url 'detail4' post.id %}"><img src = "static/콜레스테롤파.png" style="width: 120px;"></a>
+            {% endif %}
+        </div>
+            
+        <div class="one">
+            {% if post.protein > 22 %}
+            <a href="{% url 'detail5' post.id %}"><img src = "static/단백질빨.png" style="width: 120px;"></a>
+            {% elif 15.2 <= post.protein and  post.protein <= 22 %}
+            <a href="{% url 'detail5' post.id %}"><img src = "static/단백질파.png" style="width: 120px;"></a>
+            {% elif post.protein < 15.2 %}
+            <a href="{% url 'detail5' post.id %}"><img src = "static/노단.png" style="width: 120px;"></a>
+                
+            {% endif %}
+
+            {% if post.kcal > 670 %}
+            <a href="{% url 'detail6' post.id %}"><img src = "static/칼로리빨.png" style="width: 120px;"></a>
+            {% elif 570 <= post.kcal and post.kcal <= 670 %}
+            <a href="{% url 'detail6' post.id %}"><img src = "static/칼로리파.png" style="width: 120px;"></a>
+            {% else %}
+            <a href="{% url 'detail6' post.id %}"><img src = "static/노칼.png" style="width: 120px;"></a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
