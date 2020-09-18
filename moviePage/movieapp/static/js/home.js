@@ -71,13 +71,13 @@ const giveRankObject = async () => {
         console.log(data);
         for (let i = 0; i < 10; i++) {
           if (data.boxOfficeResult.dailyBoxOfficeList[i].movieNm == '테넷') {
-            let rank = data.boxOfficeResult.dailyBoxOfficeList[i].rank;
-            let showBox = document.createElement('h1');
-            let text = document.createTextNode(`${rank}위 `);
-            contentsBox
-              .appendChild(showBox)
-              .appendChild(rank)
-              .appendChild(text);
+            // let rank = data.boxOfficeResult.dailyBoxOfficeList[i].rank;
+            // let showBox = document.createElement('h1');
+            // let text = document.createTextNode(`${rank}위 `);
+            // contentsBox
+            //   .appendChild(showBox)
+            //   .appendChild(rank)
+            //   .appendChild(text);
 
             console.log(data.boxOfficeResult.dailyBoxOfficeList[i].rank);
           }
