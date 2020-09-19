@@ -11,7 +11,6 @@ let movieCodeObject = {};
 let movieNameArray = [];
 let movieCodeArray = [];
 let checkNum = 0;
-var testarr = new Array();
 var resultArr = new Array();
 const clickedSearchBtn = async () => {
   try {
